@@ -19,18 +19,8 @@ getMovies().then((movies) => {
   console.log(error);
 });
 
-/*--Sumbit button for submitting movies to the backend---------------------------------------------------------------------------------------- */
-$('#mSubmit').click(
-    function() {
-      console.log($('#userNameInput').val());
-    }
-);
-
-/*------------------------------------------------------------------------------------------ */
-
-
 function add_Movie() {
-    const movie_info = {title: 'Ajax Requests', body: 'Are a fun way to use JS!'};
+    const movie_info = {title: $('#userNameInput').val(), body: 'Are a fun way to use JS!'};
     const url = '/api/movies';
     const options = {
         method: 'POST',
@@ -44,7 +34,16 @@ function add_Movie() {
         .catch(console.log(" handle errors "));
 }
 
-add_Movie();
+/*--Sumbit button for submitting movies to the backend---------------------------------------------------------------------------------------- */
+
+$('#mSubmit').click(
+    function() {
+        add_Movie();
+    }
+);
+
+/*------------------------------------------------------------------------------------------ */
+
 
 // "title": "Ajax Requests",
 //     "body": "Are a fun way to use JS!",
