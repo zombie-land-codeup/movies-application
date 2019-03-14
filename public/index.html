@@ -5,13 +5,27 @@
     <title>My Application</title>
     <link rel="stylesheet" href="/style.css" />
 </head>
-<body>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<body onload="loadFunction()">
 
     <div class="container">
         <h1>Hello There!</h1>
         <p>To get started, edit <code>src/index.js</code>.</p>
     </div>
+    <p>
+        <button id="mSubmit">Movie Submit</button>
+        <input id="userNameInput" name="userNameInput" type="text">
+    </p>
+
+    <script>
+        function loadFunction() {
+            console.log("on load")
+        }
+    </script>
 
     <script src="./main.js"></script>
+
+
+
 </body>
 </html>
