@@ -50,4 +50,13 @@ $('#mSubmit').click(
 //     "id": 4
 
 
+//
+$.get( "/api/movies", {
+}).done(function( data ) {
+
+    data.forEach(function(data) {
+        console.log(data.title);
+    })
+
+});
 
