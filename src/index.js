@@ -20,7 +20,7 @@ getMovies().then((movies) => {
 });
 
 function add_Movie() {
-    const movie_info = {title: $('#userNameInput').val(), body: 'Are a fun way to use JS!'};
+    const movie_info = {title: $('#movieTitle').val(), rating: $('#movieRating').val()};
     const url = '/api/movies';
     const options = {
         method: 'POST',
