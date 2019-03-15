@@ -17,6 +17,7 @@ getMovies().then((movies) => {
     console.log('Here are all the movies:');
     movies.forEach(({title, rating, id}) => {
         console.log(`id#${id} - ${title} - rating: ${rating}`);
+
     });
 }).catch((error) => {
     alert('Oh no! Something went wrong.\nCheck the console for details.');
@@ -46,7 +47,28 @@ function addImage () {
             if (json != "Nothing found.") {
                 console.log(json);
 
-                $('.earth-container').append('<p>Your search found: <strong>' + json.results[0].title + '</strong></p><img src=\"http://image.tmdb.org/t/p/w500/' + json.results[0].poster_path + '\" class=\"img-responsive\" >');
+            // stars
+
+                 let rating = Math.round((json.results[0].vote_average)/2);
+                console.log(rating);
+                if (rating === 1){
+                    $(".one").addClass( "checked" );
+
+                } else if (rating === 2){
+                    $(".two").addClass( "checked" );
+
+                } else if (rating === 3){
+                    $(".tree").addClass( "checked" );
+
+                } else if (rating === 4){
+                    $(".four").addClass( "checked" );
+
+                } else if(rating === 5 ){
+                    $(".fa").addClass( "checked" );
+
+                }
+
+                $('.earth-container').append('<p><strong>' + json.results[0].title +'</strong></p><img src=\"http://image.tmdb.org/t/p/w500/' + json.results[0].poster_path + '\" class=\"img-responsive\" >');
 
                 add_Movie();
 
@@ -91,6 +113,7 @@ function add_Movie() {
 $('#mSubmit').click(
     function () {
         addImage();
+        $(".fa").removeClass( "checked" );
     }
 );
 
