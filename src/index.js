@@ -48,7 +48,6 @@ function addImage () {
                 console.log(json);
 
             // stars
-
                  let rating = Math.round((json.results[0].vote_average)/2);
                 console.log(rating);
                 if (rating === 1){
@@ -68,7 +67,7 @@ function addImage () {
 
                 }
 
-                $('.earth-container').append('<p><strong>' + json.results[0].title +'</strong></p><img src=\"http://image.tmdb.org/t/p/w500/' + json.results[0].poster_path + '\" class=\"img-responsive\" >');
+                $('.earth-container').append('<p><strong>' + json.results[0].title +'</strong></p>'+ '<span class="fa fa-star one two tree four"></span>'+'<span class="fa fa-star two tree four"></span>'+'<span class="fa fa-star tree four"></span>'+'<span class="fa fa-star four"></span>'+'<span class="fa fa-star five"></span>' +'<img src=\"http://image.tmdb.org/t/p/w500/' + json.results[0].poster_path + '\" class=\"img-responsive\" >');
 
                 add_Movie();
 
@@ -85,6 +84,10 @@ function addImage () {
     }
 
     return false;
+
+
+
+
 
 
 }
@@ -114,6 +117,7 @@ $('#mSubmit').click(
     function () {
         addImage();
         $(".fa").removeClass( "checked" );
+
     }
 );
 
