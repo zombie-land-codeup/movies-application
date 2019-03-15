@@ -64,10 +64,14 @@ $.get("/api/movies").done(function (data) {
         console.log(data.title);
 
         $('.orbit').append(
-            '<div class="earth">'+
-                '<div class="earth-wrapper">'+
-                    '<div class="earth-container">'+
+            '<div class="mercury">'+
+                '<div class="mercury-wrapper">'+
+                    '<div class="mercury-container">'+
+                        '<div class="movie_picture_holder">'+
+                        '</div>' +
+                        '<div class="movie_info_holder">'+
                         data.title +
+                        '</div>' +
                     '</div>' +
               '</div>' +
             '</div>');

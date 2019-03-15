@@ -9,212 +9,13 @@
     justify-content: flex-start;
 }
 
-/*--Earth---------------------------------------------------------------------------------------- */
-/*------------------------------------------------------------------------------------------ */
-/*------------------------------------------------------------------------------------------ */
-
-.earth {
-    height: 250px;
-    flex-basis: 20%;
-    -ms-flex: auto;
-    width: 250px;
-    position: relative;
-    padding: 10px;
-    box-sizing: border-box;
-}
-
-.earth-wrapper {
-    -webkit-box-sizing: initial;
-    -moz-box-sizing: initial;
-    box-sizing: initial;
-    background: #aaa;
-    margin: 0;
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
-    -webkit-transition: padding 0.15s cubic-bezier(0.4,0,0.2,1), margin 0.15s cubic-bezier(0.4,0,0.2,1), box-shadow 0.15s cubic-bezier(0.4,0,0.2,1);
-    transition: padding 0.15s cubic-bezier(0.4,0,0.2,1), margin 0.15s cubic-bezier(0.4,0,0.2,1), box-shadow 0.15s cubic-bezier(0.4,0,0.2,1);
-    position: relative;
-}
-
-.earth-container {
-    height: 100%;
-    width: 100%;
-    position: relative;
-}
-
-/*--Hovers---------------------------------------------------------------------------------------- */
-
-/*.earth:hover .earth-wrapper {*/
-/*padding: 2% 2%;*/
-/*margin: -2% -2%;*/
-/*}*/
-
-/*---Media Queries--------------------------------------------------------------------------------------- */
-
-@media(max-width: 1333px) {
-    .earth {
-        flex-basis: 33.33%;
-    }
-}
-
-@media(max-width: 1073px) {
-    .earth {
-        flex-basis: 33.33%;
-    }
-}
-
-@media(max-width: 815px) {
-    .earth {
-        flex-basis: 50%;
-    }
-}
-
-@media(max-width: 555px) {
-    .earth {
-        flex-basis: 100%;
-    }
-}
-
-/*--Jupiter---------------------------------------------------------------------------------------- */
-/*------------------------------------------------------------------------------------------ */
-/*------------------------------------------------------------------------------------------ */
-
-.jupiter {
-    height: 250px;
-    flex-basis: 100%;
-    -ms-flex: auto;
-    width: 250px;
-    position: relative;
-    padding: 10px;
-    box-sizing: border-box;
-}
-
-.jupiter-wrapper {
-    -webkit-box-sizing: initial;
-    -moz-box-sizing: initial;
-    box-sizing: initial;
-    background: #aaa;
-    margin: 0;
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
-    -webkit-transition: padding 0.15s cubic-bezier(0.4,0,0.2,1), margin 0.15s cubic-bezier(0.4,0,0.2,1), box-shadow 0.15s cubic-bezier(0.4,0,0.2,1);
-    transition: padding 0.15s cubic-bezier(0.4,0,0.2,1), margin 0.15s cubic-bezier(0.4,0,0.2,1), box-shadow 0.15s cubic-bezier(0.4,0,0.2,1);
-    position: relative;
-}
-
-.jupiter-container {
-    height: 100%;
-    width: 100%;
-    position: relative;
-}
-
-/*--Hovers---------------------------------------------------------------------------------------- */
-
-/*.jupiter:hover .jupiter-wrapper {*/
-/*padding: 2% 2%;*/
-/*margin: -2% -2%;*/
-/*}*/
-
-/*---Media Queries--------------------------------------------------------------------------------------- */
-
-@media(max-width: 1333px) {
-    .jupiter {
-        flex-basis: 100%;
-    }
-}
-
-@media(max-width: 1073px) {
-    .jupiter {
-        flex-basis: 100%;
-    }
-}
-
-@media(max-width: 815px) {
-    .jupiter {
-        flex-basis: 100%;
-    }
-}
-
-@media(max-width: 555px) {
-    .jupiter {
-        flex-basis: 100%;
-    }
-}
-/*--saturn---------------------------------------------------------------------------------------- */
-/*------------------------------------------------------------------------------------------ */
-/*------------------------------------------------------------------------------------------ */
-
-.saturn {
-    height: 250px;
-    flex-basis: 50%;
-    -ms-flex: auto;
-    width: 250px;
-    position: relative;
-    padding: 10px;
-    box-sizing: border-box;
-}
-
-.saturn-wrapper {
-    -webkit-box-sizing: initial;
-    -moz-box-sizing: initial;
-    box-sizing: initial;
-    background: #aaa;
-    margin: 0;
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
-    -webkit-transition: padding 0.15s cubic-bezier(0.4,0,0.2,1), margin 0.15s cubic-bezier(0.4,0,0.2,1), box-shadow 0.15s cubic-bezier(0.4,0,0.2,1);
-    transition: padding 0.15s cubic-bezier(0.4,0,0.2,1), margin 0.15s cubic-bezier(0.4,0,0.2,1), box-shadow 0.15s cubic-bezier(0.4,0,0.2,1);
-    position: relative;
-}
-
-.saturn-container {
-    height: 100%;
-    width: 100%;
-    position: relative;
-}
-
-/*--Hovers---------------------------------------------------------------------------------------- */
-
-/*.saturn:hover .saturn-wrapper {*/
-/*padding: 2% 2%;*/
-/*margin: -2% -2%;*/
-/*}*/
-
-/*---Media Queries--------------------------------------------------------------------------------------- */
-
-@media(max-width: 1333px) {
-    .saturn {
-        flex-basis: 50%;
-    }
-}
-
-@media(max-width: 1073px) {
-    .saturn {
-        flex-basis: 50%;
-    }
-}
-
-@media(max-width: 815px) {
-    .saturn {
-        flex-basis: 100%;
-    }
-}
-
-@media(max-width: 555px) {
-    .saturn {
-        flex-basis: 100%;
-    }
-}
 
 /*--mercury---------------------------------------------------------------------------------------- */
 /*------------------------------------------------------------------------------------------ */
 /*------------------------------------------------------------------------------------------ */
 
 .mercury {
-    height: 250px;
+    height: 300px;
     flex-basis: 25%;
     -ms-flex: auto;
     width: 250px;
@@ -238,6 +39,8 @@
 }
 
 .mercury-container {
+    display: flex;
+    flex-direction: column;
     height: 100%;
     width: 100%;
     position: relative;
@@ -245,10 +48,10 @@
 
 /*--Hovers---------------------------------------------------------------------------------------- */
 
-/*.mercury:hover .mercury-wrapper {*/
-/*padding: 2% 2%;*/
-/*margin: -2% -2%;*/
-/*}*/
+.mercury:hover .mercury-wrapper {
+padding: 2% 2%;
+margin: -2% -2%;
+}
 
 /*---Media Queries--------------------------------------------------------------------------------------- */
 
@@ -276,71 +79,29 @@
     }
 }
 
-/*--pluto---------------------------------------------------------------------------------------- */
+
+/*------------------------------------------------------------------------------------------ */
 /*------------------------------------------------------------------------------------------ */
 /*------------------------------------------------------------------------------------------ */
 
-.pluto {
-    height: 150px;
-    flex-basis: 12.5%;
+.movie_picture_holder {
+    flex-basis: 70%;
     -ms-flex: auto;
-    width: 250px;
     position: relative;
     padding: 10px;
     box-sizing: border-box;
+    height: 60px;
+    background-color: limegreen;
 }
 
-.pluto-wrapper {
-    -webkit-box-sizing: initial;
-    -moz-box-sizing: initial;
-    box-sizing: initial;
-    background: #aaa;
-    margin: 0;
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
-    -webkit-transition: padding 0.15s cubic-bezier(0.4,0,0.2,1), margin 0.15s cubic-bezier(0.4,0,0.2,1), box-shadow 0.15s cubic-bezier(0.4,0,0.2,1);
-    transition: padding 0.15s cubic-bezier(0.4,0,0.2,1), margin 0.15s cubic-bezier(0.4,0,0.2,1), box-shadow 0.15s cubic-bezier(0.4,0,0.2,1);
+
+.movie_info_holder {
+    flex-basis: 30%;
+    -ms-flex: auto;
     position: relative;
+    padding: 10px;
+    box-sizing: border-box;
+    height: 60px;
+    background-color: lightskyblue;
 }
-
-.pluto-container {
-    height: 100%;
-    width: 100%;
-    position: relative;
-}
-
-/*--Hovers---------------------------------------------------------------------------------------- */
-
-/*.pluto:hover .pluto-wrapper {*/
-/*padding: 2% 2%;*/
-/*margin: -2% -2%;*/
-/*}*/
-
-/*---Media Queries--------------------------------------------------------------------------------------- */
-
-@media(max-width: 1333px) {
-    .pluto {
-        flex-basis: 12.5%;
-    }
-}
-
-@media(max-width: 1073px) {
-    .pluto {
-        flex-basis: 25%;
-    }
-}
-
-@media(max-width: 815px) {
-    .pluto {
-        flex-basis: 50%;
-    }
-}
-
-@media(max-width: 555px) {
-    .pluto {
-        flex-basis: 100%;
-    }
-}
-
 
