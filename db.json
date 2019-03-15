@@ -9,7 +9,11 @@
       "title": "Star Wars: A New Hope",
       "rating": "5",
       "id": 2
+    },
+    {
+      "title": "cast away",
+      "rating": "4.5",
+      "id": 3
     }
   ]
 }
-
