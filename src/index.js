@@ -61,10 +61,11 @@ $.get("/api/movies").done(function (data) {
 
     data.forEach(function (data) {
 
-        $('.movieDisplay').append('<div class="column">' +
-            '<div class="moviePoster">' + '</div>' +
-            '<h3>' + data.title+ '</h3>' +
-            '</div>');
+        $('.display-movies').append('<div class="earth">' +
+            '<div class="earth-wrapper">' +
+                '<div class="earth-container">'  +
+            data.title
+            +'</div>');
 
     })
 
