@@ -55,30 +55,54 @@ $('#mSubmit').click(
 //
 
 var poster = $.getJSON("https://api.themoviedb.org/3/discover/movie?api_key=15d2ea6d0dc1d476efbca3eba2b9bbfb");
-console.log(poster);
+var tog = true;
 
 $.get("/api/movies").done(function (data) {
 
     data.forEach(function (data) {
 
-        console.log(data.title);
+        // $(".mercury-wrapper").hover(function () {
+        //     if (tog) {
+        //         $("#picture"+data.id).css('display', 'none');
+        //         $("#title"+data.id).css('background-color', 'lighttgreen');
+        //         $("#rating"+data.id).css('display', 'block')
+        //     } else {
+        //         $("#picture"+data.id).css('display', 'flex');
+        //         $("#title"+data.id).css("background-color", "lightgreen");
+        //         $("#rating"+data.id).css('display', 'none')
+        //     }
+        //     tog = !tog;
+        // });
 
-        $('.orbit').append(
-            '<div class="mercury">'+
-                '<div class="mercury-wrapper">'+
-                    '<div class="mercury-container">'+
-                        '<div class="movie_picture_holder">'+
-                        '</div>' +
-                        '<div class="movie_info_holder">'+
-                        data.title +
-                        '</div>' +
+        $('#display-movies').append(
+            '<div class="mercury">' +
+                '<div class="mercury-wrapper">' +
+                    '<div class="mercury-container">' +
+                    '<div id="picture'+ data.id+'">' +
+                    '</div>' +
+                    '<div id="title'+ data.id+'">' +
+                    '</div>' +
+                    '<div id="title'+ data.id+'">' +
                     '</div>' +
               '</div>' +
             '</div>');
-    })
-
+    });
 
 });
 
 
-//hi
+
+$(".mercury-wrapper").hover(function () {
+    if (tog) {
+        $("#picture").css('display', 'none');
+        $("#title").css('background-color', 'lightgreen');
+        $("#rating").css('display', 'block')
+    } else {
+        $("#picture").css('display', 'flex');
+        $("#title").css("background-color", "lightgreen");
+        $("#rating").css('display', 'none')
+    }
+    tog = !tog;
+});
+
+

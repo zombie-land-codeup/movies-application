@@ -15,7 +15,9 @@
 /*------------------------------------------------------------------------------------------ */
 
 .mercury {
-    height: 300px;
+    display: flex;
+    flex-direction: column;
+    height: 250px;
     flex-basis: 25%;
     -ms-flex: auto;
     width: 250px;
@@ -45,6 +47,42 @@
     width: 100%;
     position: relative;
 }
+
+/*--Hover on---------------------------------------------------------------------------------------- */
+
+#picture {
+    flex-basis: 80%;
+    background-color: lightskyblue;
+}
+
+#title {
+    flex-basis: 20%;
+    background-color: lightgreen;
+}
+
+#rating {
+    display: none;
+    flex-basis: 80%;
+    background-color: yellow;
+}
+
+/*--Hover off---------------------------------------------------------------------------------------- */
+
+/*#picture {*/
+    /*display: none;*/
+    /*background-color: lightskyblue;*/
+/*}*/
+
+/*#title {*/
+    /*flex-basis: 20%;*/
+    /*background-color: lightgreen;*/
+/*}*/
+
+/*#rating {*/
+    /*flex-basis: 80%;*/
+    /*background-color: yellow;*/
+/*}*/
+
 
 /*--Hovers---------------------------------------------------------------------------------------- */
 
@@ -76,32 +114,40 @@ margin: -2% -2%;
 @media(max-width: 555px) {
     .mercury {
         flex-basis: 100%;
+        max-width: 300px;
     }
 }
 
+/*--Jupiter---------------------------------------------------------------------------------------- */
+/*------------------------------------------------------------------------------------------ */
+/*------------------------------------------------------------------------------------------ */
 
-/*------------------------------------------------------------------------------------------ */
-/*------------------------------------------------------------------------------------------ */
-/*------------------------------------------------------------------------------------------ */
-
-.movie_picture_holder {
-    flex-basis: 70%;
+.jupiter {
+    height: 75px;
+    flex-basis: 100%;
     -ms-flex: auto;
+    width: 250px;
     position: relative;
     padding: 10px;
     box-sizing: border-box;
-    height: 60px;
-    background-color: limegreen;
 }
 
-
-.movie_info_holder {
-    flex-basis: 30%;
-    -ms-flex: auto;
+.jupiter-wrapper {
+    -webkit-box-sizing: initial;
+    -moz-box-sizing: initial;
+    box-sizing: initial;
+    background: #aaa;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    -webkit-transition: padding 0.15s cubic-bezier(0.4,0,0.2,1), margin 0.15s cubic-bezier(0.4,0,0.2,1), box-shadow 0.15s cubic-bezier(0.4,0,0.2,1);
+    transition: padding 0.15s cubic-bezier(0.4,0,0.2,1), margin 0.15s cubic-bezier(0.4,0,0.2,1), box-shadow 0.15s cubic-bezier(0.4,0,0.2,1);
     position: relative;
-    padding: 10px;
-    box-sizing: border-box;
-    height: 60px;
-    background-color: lightskyblue;
 }
 
+.jupiter-container {
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
