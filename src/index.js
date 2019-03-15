@@ -24,15 +24,14 @@ getMovies().then((movies) => {
 });
 
 
-
 //--------------------------------------------------Add poster images to movies using movieDB database------------------------------//
 
 
-function addImage () {
+function addImage() {
 
     const film = $('#movieTitle').val();
 
-    if(film === ''){
+    if (film === '') {
 
         //Empty input submission
         $('#movieTitle').html('<div class="alert"><strong>Oops!</strong> Try adding something into the search field.</div>');
@@ -43,36 +42,34 @@ function addImage () {
         $.getJSON("https://api.themoviedb.org/3/search/movie?api_key=15d2ea6d0dc1d476efbca3eba2b9bbfb&query=" + film + "&callback=?", function (json) {
 
             //If successful
-            if (json != "Nothing found.") {
+            if (json !== "Nothing found.") {
                 console.log(json);
 
-                $('.earth-container').append('<p>Your search found: <strong>' + json.results[0].title + '</strong></p><img src=\"http://image.tmdb.org/t/p/w500/' + json.results[0].poster_path + '\" class=\"img-responsive\" >');
+                //Append movie title and movie img
 
+                $('.earth-container').append(json.results[0].title + '<img src=\"http://image.tmdb.org/t/p/w500/' + json.results[0].poster_path + '\" class=\"img-responsive\" >');
+
+                //Existing movie, so add to database
                 add_Movie();
 
-            } else {
-                $.getJSON("https://api.themoviedb.org/3/search/movie?api_key=15d2ea6d0dc1d476efbca3eba2b9bbfb&query=goonies&callback=?", function(json) {
-
-                    console.log(json);
-                    $('#poster').html('<div class="alert"><p>We\'re afraid nothing was found for that search.</p></div><p>Perhaps you were looking for The Goonies?</p><img id="thePoster" src="http://image.tmdb.org/t/p/w500/' + json[0].poster_path + ' class="img-responsive" />');
-                });
             }
+
 
         })
 
     }
 
+    //If movie doesnt exist
     return false;
-
 
 }
 
-//Add movie to the databsed after
-
+//--------------------------------Add movie to the databse after add Image is successful using post----------------------------------//
 
 
 function add_Movie() {
     const movie_info = {title: $('#movieTitle').val(), rating: $('#movieRating').val()};
+    //url to the database
     const url = '/api/movies';
     const options = {
         method: 'POST',
@@ -94,16 +91,9 @@ $('#mSubmit').click(
     }
 );
 
-/*------------------------------------------------------------------------------------------ */
+/*---------------------------------------------------Appending movies---------------------------------------------------- */
 
 
-// "title": "Ajax Requests",
-//     "body": "Are a fun way to use JS!",
-//     "id": 4
-
-// console.log(data.title);
-
-//
 
 
 $.get("/api/movies").done(function (data) {
@@ -112,9 +102,9 @@ $.get("/api/movies").done(function (data) {
 
         $('.display-movies').append('<div class="earth">' +
             '<div class="earth-wrapper">' +
-                '<div class="earth-container">'  +
+            '<div class="earth-container">' +
             data.title
-            +'</div>');
+            + '</div>');
 
     })
 
