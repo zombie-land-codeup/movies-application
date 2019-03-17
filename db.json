@@ -1,44 +1,24 @@
 {
   "movies": [
     {
-      "title": "Casablanca",
-      "rating": "4",
+      "title": "Star Wars: The Last Jedi",
+      "rating": "5",
       "id": 1
     },
     {
-      "title": "Star Wars: A New Hope",
-      "rating": "5",
+      "title": "Cast Away",
+      "rating": "4.5",
       "id": 2
     },
     {
-      "title": "cast away",
-      "rating": "4.5",
+      "title": "finding nemo",
+      "rating": "",
       "id": 3
     },
     {
       "title": "finding nemo",
-      "rating": "5",
+      "rating": "",
       "id": 4
-    },
-    {
-      "title": "finding nemo",
-      "rating": "",
-      "id": 5
-    },
-    {
-      "title": "finding nemo",
-      "rating": "",
-      "id": 6
-    },
-    {
-      "title": "finding nemo",
-      "rating": "",
-      "id": 7
-    },
-    {
-      "title": "finding nemo",
-      "rating": "",
-      "id": 8
     }
   ]
 }
