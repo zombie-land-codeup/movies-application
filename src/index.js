@@ -45,15 +45,37 @@ function addImage() {
             if (json !== "Nothing found.") {
 
 
-                //Append movie title and movie img
+                $('#display-movies').append(
+                    '<div class="mercury">' +
+                    '<div class="mercury-wrapper">' +
+                    '<div class="mercury-container">' +
+                    '<div class="picture">' +
+                    ('<img src=\"http://image.tmdb.org/t/p/w500/' + json.results[0].poster_path + '\" class=\"img-responsive\" >') +
+                    '</div>' +
+                    '<div class="title">' +
+                    film +
+                    '</div>' +
+                    '<div class="rating">' +
+                    '</div>' +
+                    '</div>' +
+                    '</div>');
 
-                console.log(typeof json.results);
-                $('.earth-container').append(json.results[0].title + '<img src=\"http://image.tmdb.org/t/p/w500/' + json.results[0].poster_path + '\" class=\"img-responsive\" >');
+
+                $(".mercury-wrapper").hover(function () {
+                    if (tog) {
+                        $(".picture", this).css('display', 'none');
+                        $(".title", this).css('background-color', 'lightgreen');
+                        $(".rating", this).css('display', 'block')
+                    } else {
+                        $(".picture", this).css('display', 'flex');
+                        $(".title", this).css("background-color", "lightgreen");
+                        $(".rating", this).css('display', 'none')
+                    }
+                    tog = !tog;
 
 
-                //Existing movie, so add to database
+                });
                 add_Movie();
-
 
 
             }
@@ -95,7 +117,8 @@ function add_Movie() {
 function deleteMovie() {
 
 
-    $.get("/api/movies").done(function (data){
+    console.log('test')
+    $.get("/api/movies").done(function (data) {
         console.log(data[0].id);
         //url to the database
         const url = '/api/movies';
@@ -109,11 +132,6 @@ function deleteMovie() {
 }
 
 
-
-
-
-
-
 /*--Sumbit button for submitting movies to the database---------------------------------------------------------------------------------------- */
 
 $('#mSubmit').click(
@@ -124,8 +142,9 @@ $('#mSubmit').click(
 );
 
 
-$('#delete').click(
+$('.delete').click(
     function () {
+        console.log("hello");
         deleteMovie();
 
     }
@@ -135,55 +154,51 @@ $('#delete').click(
 /*---------------------------------------------------Appending movies/Displaying Movies---------------------------------------------------- */
 
 
-
-var poster = $.getJSON("https://api.themoviedb.org/3/discover/movie?api_key=15d2ea6d0dc1d476efbca3eba2b9bbfb");
 var tog = true;
 
 
 $.get("/api/movies").done(function (data) {
 
+
     data.forEach(function (data) {
 
-        $('#display-movies').append(
-            '<div class="mercury">' +
-            '<div class="mercury-wrapper">' +
-            '<div class="mercury-container">' +
-            '<div class="picture">' +
-            '</div>' +
-            '<div class="title">' +
-            data.title +
-            '</div>' +
-            '<div class="rating">' +
-            '</div>' +
-            '</div>' +
-            '</div>');
-    });
+        let film = data.title;
+
+        $.getJSON("https://api.themoviedb.org/3/search/movie?api_key=15d2ea6d0dc1d476efbca3eba2b9bbfb&query=" + film + "&callback=?", function (json) {
 
 
-    $(".mercury-wrapper").hover(function () {
-        if (tog) {
-            $(".picture", this).css('display', 'none');
-            $(".title", this).css('background-color', 'lightgreen');
-            $(".rating", this).css('display', 'block')
-        } else {
-            $(".picture", this).css('display', 'flex');
-            $(".title", this).css("background-color", "lightgreen");
-            $(".rating", this).css('display', 'none')
-        }
-        tog = !tog;
-    });
+            $('#display-movies').append(
+                '<div class="mercury">' +
+                '<div class="mercury-wrapper">' +
+                '<div class="mercury-container">' +
+                '<div class="picture">' +
+                ('<img src=\"http://image.tmdb.org/t/p/w500/' + json.results[0].poster_path + '\" class=\"img-responsive\" >') +
+                '</div>' +
+                '<div class="title">' +
+                data.title +
+                '</div>' +
+                '<div class="rating">' +
+                '<button class="delete" type = "submit" > Delete </button>' +
+                '</div>' +
+                '</div>' +
+                '</div>');
 
-    const film = data.title;
 
-    $.getJSON("https://api.themoviedb.org/3/search/movie?api_key=15d2ea6d0dc1d476efbca3eba2b9bbfb&query=" + film + "&callback=?", function (json) {
+            $(".mercury-wrapper").hover(function () {
+                if (tog) {
+                    $(".picture", this).css('display', 'none');
+                    $(".title", this).css('background-color', 'lightgreen');
+                    $(".rating", this).css('display', 'block')
+                } else {
+                    $(".picture", this).css('display', 'flex');
+                    $(".title", this).css("background-color", "lightgreen");
+                    $(".rating", this).css('display', 'none')
+                }
+                tog = !tog;
 
 
-        console.log(json.results[0].poster_path);
-        $('.display-movies').append('<div class="earth">' +
-            '<div class="earth-wrapper">' +
-            '<div class="earth-container">' +
-            '<div class="posterImage">' + $('.earth-container').append(data.title + '<img src=\"http://image.tmdb.org/t/p/w500/' + json.results[0].poster_path + '\" class=\"img-responsive\" >') + '</div>'
-            + '</div>');
+            });
+        });
 
 
     });
