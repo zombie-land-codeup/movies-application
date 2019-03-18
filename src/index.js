@@ -65,68 +65,33 @@ $.get("/api/movies").done(function (data) {
             '<div class="mercury">' +
                 '<div class="mercury-wrapper">' +
                     '<div class="mercury-container">' +
-                    '<div class="picture'+ data.id+'">' +
+                    '<div class="picture">' +
                     '</div>' +
-                    '<div class="title'+ data.id+'">' +
+                    '<div class="title">' +
+                    data.title +
                     '</div>' +
-                    '<div class="title'+ data.id+'">' +
+                    '<div class="rating">' +
                     '</div>' +
               '</div>' +
             '</div>');
     });
 
+
+    $(".mercury-wrapper").hover(function () {
+        if (tog) {
+            $(".picture", this).css('display', 'none');
+            $(".title", this).css('background-color', 'lightgreen');
+            $(".rating", this).css('display', 'block')
+        } else {
+            $(".picture", this).css('display', 'flex');
+            $(".title", this).css("background-color", "lightgreen");
+            $(".rating", this).css('display', 'none')
+        }
+        tog = !tog;
+    });
+
+
 });
 
 
-
-// $(".mercury-wrapper").on("mouseover" function () {
-//     if (tog) {
-//         $("#picture").css('display', 'none');
-//         $("#title").css('background-color', 'lightgreen');
-//         $("#rating").css('display', 'block')
-//     } else {
-//         $("#picture").css('display', 'flex');
-//         $("#title").css("background-color", "lightgreen");
-//         $("#rating").css('display', 'none')
-//     }
-//     tog = !tog;
-
-    // $( ".mercury-wrapper" ).hover(
-    //     function() {
-    //         $("#picture", this ).css( $( 'display', 'none' ) );
-    //         $("#title", this).css('background-color', 'lightgreen');
-    //         $("#rating", this).css('display', 'block');
-    //     }, function() {
-    //         $("#picture", this).css('display', 'flex');
-    //         $("#title", this).css("background-color", "lightgreen");
-    //         $("#rating", this).css('display', 'none')
-    //     }
-    // );
-
-
-// $(".mercury-wrapper").hover(function () {
-//     if (tog) {
-//         $(".picture").css('display', 'none');
-//         $(".title").css('background-color', 'lightgreen');
-//         $(".rating").css('display', 'block')
-//     } else {
-//         $(".picture").css('display', 'flex');
-//         $(".title").css("background-color", "lightgreen");
-//         $(".rating").css('display', 'none')
-//     }
-//     tog = !tog;
-// });
-
-$(".mercury-wrapper").hover(function () {
-    if (tog) {
-        $(".picture", this).css('display', 'none');
-        $(".title", this).css('background-color', 'lightgreen');
-        $(".rating", this).css('display', 'block')
-    } else {
-        $(".picture", this).css('display', 'flex');
-        $(".title", this).css("background-color", "lightgreen");
-        $(".rating", this).css('display', 'none')
-    }
-    tog = !tog;
-});
 
