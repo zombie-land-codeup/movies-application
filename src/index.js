@@ -103,7 +103,7 @@ function deleteMovie() {
             method: 'DELETE',
         };
         fetch(url, options)
-            .then(console.log("post was created successfully"))
+            .then(console.log("post was delete successfully"))
             .catch(console.log(" handle errors "));
     })
 }
