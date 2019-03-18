@@ -61,28 +61,15 @@ $.get("/api/movies").done(function (data) {
 
     data.forEach(function (data) {
 
-        // $(".mercury-wrapper").hover(function () {
-        //     if (tog) {
-        //         $("#picture"+data.id).css('display', 'none');
-        //         $("#title"+data.id).css('background-color', 'lighttgreen');
-        //         $("#rating"+data.id).css('display', 'block')
-        //     } else {
-        //         $("#picture"+data.id).css('display', 'flex');
-        //         $("#title"+data.id).css("background-color", "lightgreen");
-        //         $("#rating"+data.id).css('display', 'none')
-        //     }
-        //     tog = !tog;
-        // });
-
         $('#display-movies').append(
             '<div class="mercury">' +
                 '<div class="mercury-wrapper">' +
                     '<div class="mercury-container">' +
-                    '<div id="picture'+ data.id+'">' +
+                    '<div class="picture'+ data.id+'">' +
                     '</div>' +
-                    '<div id="title'+ data.id+'">' +
+                    '<div class="title'+ data.id+'">' +
                     '</div>' +
-                    '<div id="title'+ data.id+'">' +
+                    '<div class="title'+ data.id+'">' +
                     '</div>' +
               '</div>' +
             '</div>');
@@ -92,17 +79,54 @@ $.get("/api/movies").done(function (data) {
 
 
 
+// $(".mercury-wrapper").on("mouseover" function () {
+//     if (tog) {
+//         $("#picture").css('display', 'none');
+//         $("#title").css('background-color', 'lightgreen');
+//         $("#rating").css('display', 'block')
+//     } else {
+//         $("#picture").css('display', 'flex');
+//         $("#title").css("background-color", "lightgreen");
+//         $("#rating").css('display', 'none')
+//     }
+//     tog = !tog;
+
+    // $( ".mercury-wrapper" ).hover(
+    //     function() {
+    //         $("#picture", this ).css( $( 'display', 'none' ) );
+    //         $("#title", this).css('background-color', 'lightgreen');
+    //         $("#rating", this).css('display', 'block');
+    //     }, function() {
+    //         $("#picture", this).css('display', 'flex');
+    //         $("#title", this).css("background-color", "lightgreen");
+    //         $("#rating", this).css('display', 'none')
+    //     }
+    // );
+
+
+// $(".mercury-wrapper").hover(function () {
+//     if (tog) {
+//         $(".picture").css('display', 'none');
+//         $(".title").css('background-color', 'lightgreen');
+//         $(".rating").css('display', 'block')
+//     } else {
+//         $(".picture").css('display', 'flex');
+//         $(".title").css("background-color", "lightgreen");
+//         $(".rating").css('display', 'none')
+//     }
+//     tog = !tog;
+// });
+
 $(".mercury-wrapper").hover(function () {
     if (tog) {
-        $("#picture").css('display', 'none');
-        $("#title").css('background-color', 'lightgreen');
-        $("#rating").css('display', 'block')
+        $(".picture", this).css('display', 'none');
+        $(".title", this).css('background-color', 'lightgreen');
+        $(".rating", this).css('display', 'block')
     } else {
-        $("#picture").css('display', 'flex');
-        $("#title").css("background-color", "lightgreen");
-        $("#rating").css('display', 'none')
+        $(".picture", this).css('display', 'flex');
+        $(".title", this).css("background-color", "lightgreen");
+        $(".rating", this).css('display', 'none')
     }
     tog = !tog;
 });
-
 

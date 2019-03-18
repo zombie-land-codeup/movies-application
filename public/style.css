@@ -50,17 +50,17 @@
 
 /*--Hover on---------------------------------------------------------------------------------------- */
 
-#picture {
+.picture {
     flex-basis: 80%;
     background-color: lightskyblue;
 }
 
-#title {
+.title {
     flex-basis: 20%;
     background-color: lightgreen;
 }
 
-#rating {
+.rating {
     display: none;
     flex-basis: 80%;
     background-color: yellow;
