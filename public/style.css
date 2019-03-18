@@ -346,3 +346,11 @@
 .checked {
     color: orange;
 }
+.checked2 {
+    color: orange;
+}
+.star-1:before{content:"\2605\2606\2606\2606\2606";}
+.star-2:before{content:"\2605\2605\2606\2606\2606";}
+.star-3:before{content:"\2605\2605\2605\2606\2606";}
+.star-4:before{content:"\2605\2605\2605\2605\2606";}
+.star-5:before{content:"\2605\2605\2605\2605\2605";}

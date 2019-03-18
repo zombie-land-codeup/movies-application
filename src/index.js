@@ -14,9 +14,19 @@ sayHello('World');
 const {getMovies} = require('./api.js');
 
 getMovies().then((movies) => {
-    console.log('Here are all the movies:');
+    //console.log('Here are all the movies:');
+
+
     movies.forEach(({title, rating, id}) => {
-        console.log(`id#${id} - ${title} - rating: ${rating}`);
+     console.log(`id#${id} - ${title} - rating: ${rating}`);
+
+
+
+        //$(".dataBase").append('<div>'+ id + title + '<span class="fa fa-star one1 two2 tree3 four4 five5"></span>'+'<span class="fa fa-star two2 tree3 four4 five5"></span>'+'<span class="fa fa-star tree3 four4 five5"></span>'+'<span class="fa fa-star four4 five5"></span>'+'<span class="fa fa-star five5"></span>' + '</div>')
+        $(".dataBase").append(`<div> ${id} ${title}<span class="star-${rating}"></span></div>`)
+
+
+
 
     });
 }).catch((error) => {
@@ -116,7 +126,7 @@ function add_Movie() {
 $('#mSubmit').click(
     function () {
         addImage();
-        $(".fa").removeClass( "checked" );
+       // $(".fa").removeClass( "checked" );
 
     }
 );
