@@ -117,7 +117,7 @@ function add_Movie() {
 function deleteMovie() {
 
 
-    console.log('test')
+    console.log('test');
     $.get("/api/movies").done(function (data) {
         console.log(data[0].id);
         //url to the database
@@ -141,11 +141,12 @@ $('#mSubmit').click(
     }
 );
 
+//Personalized ID
 
 $('.delete').click(
     function () {
-        console.log("hello");
-        deleteMovie();
+       return console.log("hello");
+        // deleteMovie();
 
     }
 );
@@ -198,6 +199,14 @@ $.get("/api/movies").done(function (data) {
 
 
             });
+
+            $('.delete').click(
+                function () {
+                    return console.log("hello");
+                    // deleteMovie();
+
+                }
+            );
         });
 
 
