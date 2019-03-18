@@ -1,10 +1,153 @@
-html, body {
-    height: 100%;
+.universe {
+    max-width: 1335px;
+    margin: 0 auto;
 }
 
-.container {
+.orbit {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+}
+
+
+/*--mercury---------------------------------------------------------------------------------------- */
+/*------------------------------------------------------------------------------------------ */
+/*------------------------------------------------------------------------------------------ */
+
+.mercury {
+    display: flex;
+    flex-direction: column;
+    height: 250px;
+    flex-basis: 25%;
+    -ms-flex: auto;
+    width: 250px;
     position: relative;
-    top: 50%;
-    transform: translateY(-100%);
-    text-align: center;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.mercury-wrapper {
+    -webkit-box-sizing: initial;
+    -moz-box-sizing: initial;
+    box-sizing: initial;
+    background: #aaa;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    -webkit-transition: padding 0.15s cubic-bezier(0.4,0,0.2,1), margin 0.15s cubic-bezier(0.4,0,0.2,1), box-shadow 0.15s cubic-bezier(0.4,0,0.2,1);
+    transition: padding 0.15s cubic-bezier(0.4,0,0.2,1), margin 0.15s cubic-bezier(0.4,0,0.2,1), box-shadow 0.15s cubic-bezier(0.4,0,0.2,1);
+    position: relative;
+}
+
+.mercury-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+/*--Hover on---------------------------------------------------------------------------------------- */
+
+.picture {
+    flex-basis: 80%;
+    background-color: lightskyblue;
+}
+
+.title {
+    flex-basis: 20%;
+    background-color: lightgreen;
+}
+
+.rating {
+    display: none;
+    flex-basis: 80%;
+    background-color: yellow;
+}
+
+/*--Hover off---------------------------------------------------------------------------------------- */
+
+/*#picture {*/
+    /*display: none;*/
+    /*background-color: lightskyblue;*/
+/*}*/
+
+/*#title {*/
+    /*flex-basis: 20%;*/
+    /*background-color: lightgreen;*/
+/*}*/
+
+/*#rating {*/
+    /*flex-basis: 80%;*/
+    /*background-color: yellow;*/
+/*}*/
+
+
+/*--Hovers---------------------------------------------------------------------------------------- */
+
+.mercury:hover .mercury-wrapper {
+padding: 2% 2%;
+margin: -2% -2%;
+}
+
+/*---Media Queries--------------------------------------------------------------------------------------- */
+
+@media(max-width: 1333px) {
+    .mercury {
+        flex-basis: 25%;
+    }
+}
+
+@media(max-width: 1073px) {
+    .mercury {
+        flex-basis: 25%;
+    }
+}
+
+@media(max-width: 815px) {
+    .mercury {
+        flex-basis: 50%;
+    }
+}
+
+@media(max-width: 555px) {
+    .mercury {
+        flex-basis: 100%;
+        max-width: 300px;
+    }
+}
+
+/*--Jupiter---------------------------------------------------------------------------------------- */
+/*------------------------------------------------------------------------------------------ */
+/*------------------------------------------------------------------------------------------ */
+
+.jupiter {
+    height: 75px;
+    flex-basis: 100%;
+    -ms-flex: auto;
+    width: 250px;
+    position: relative;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.jupiter-wrapper {
+    -webkit-box-sizing: initial;
+    -moz-box-sizing: initial;
+    box-sizing: initial;
+    background: #aaa;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    -webkit-transition: padding 0.15s cubic-bezier(0.4,0,0.2,1), margin 0.15s cubic-bezier(0.4,0,0.2,1), box-shadow 0.15s cubic-bezier(0.4,0,0.2,1);
+    transition: padding 0.15s cubic-bezier(0.4,0,0.2,1), margin 0.15s cubic-bezier(0.4,0,0.2,1), box-shadow 0.15s cubic-bezier(0.4,0,0.2,1);
+    position: relative;
+}
+
+.jupiter-container {
+    height: 100%;
+    width: 100%;
+    position: relative;
 }
